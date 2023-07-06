@@ -9,3 +9,4 @@ Project for lablab Hackathon
 - Ragad Alrowili رغد الرويلي
 - Reema al twuaijri ريما التويجري
 - Afra Alalawi عفراء العلوي
+- Sheikha al-rasheed شيخه الرشيد
