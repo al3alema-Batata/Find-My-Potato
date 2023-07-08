@@ -25,7 +25,7 @@ def main():
     st.write("Ask any question, and BatataBot will provide answers!")
 
     # Available place types for the checklist
-    place_types = ['Historical Sites', 'Beaches', 'Mountains', 'Deserts', 'Cities']
+    place_types = ['Restaurant', 'Coffee Shop', 'Activities', 'Others']
 
     # User selection for the type of place to visit
     selected_types = st.multiselect("Select the type of place you want to visit", place_types)
