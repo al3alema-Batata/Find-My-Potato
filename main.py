@@ -1,5 +1,6 @@
 import cohere
 import streamlit as st
+
 import requests
 from apikey import apikey, apikeyG
 from geopy.geocoders import GoogleV3
@@ -71,9 +72,28 @@ def main():
     # User input for preferences
     user_preferences = st.text_input("Enter your preferences")
 
+    if st.button("Show Links"):
+        if 'Shopping' in selected_types:
+            # Show information related to Shopping
+            st.header("Shopping Information")
+            st.write("Here's a link to the shopping map:")
+            st.markdown("[Shopping Map](https://goo.gl/maps/mGXjnhBZXR5CYnMMA)")
+
+        if 'Activities' in selected_types:
+            # Show information related to Activities
+            st.header("Activities Information")
+            st.write("Here's a link to the activities map:")
+            st.markdown("[Activities Map](https://goo.gl/maps/VJpXGcpks5URY1fp9)")
+
+        if 'Food' in selected_types:
+            # Show information related to Food
+            st.header("Food Information")
+            st.write("Here's a link to the food map:")
+            st.markdown("[Food Map](https://goo.gl/maps/mGXjnhBZXR5CYnMMA)")
+
     # if st.button("Search"):
     #     # Combine selected types and user preferences into a search query
-    #     search_query = 'Shopping'
+    #     search_query = f"{', '.join(selected_types)} {user_preferences}"
     #
     #     # Searching for places in Google Maps
     #     places = search_places(search_query)
