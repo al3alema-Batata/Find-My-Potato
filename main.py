@@ -1,32 +1,49 @@
 import cohere
-
+import streamlit as st
+from apikey import apikey
 # Writing a prompt for my model
 def myPrompt(question):
-    return 'You are a chatbot that answers questions:'
+    return 'You are a Friendly Tour guide in KSA that answers questions:'
 
-# Providing API Key Credentials
-class CoHere:
-    def __init__(self, api_key):
-        self.co = cohere.Client(f'{api_key}', '2021-11-08')
+def batataBot(question):
+    cohere_instance = cohere.Client(apikey, '2021-11-08')
+    response = cohere_instance.generate(
+        model='medium',
+        prompt=myPrompt(question),
+        max_tokens=50,
+        temperature=1
+    ).generations[0].text
+    return response
 
-    # A method to generate a text
-    def cohere(self, question):
-        return self.co.generate(
-            model='medium',
-            prompt=myPrompt(question),
-            max_tokens=50,
-            temperature=1
-        ).generations[0].text
-#streamlit section
-#@Reemaalt @SheikhaAr
-import streamlit as st
-st.header("Welcome to Find my Batata")
-st.header("Choose the kind of place you want")
-st.checkbox("Restaurant")
-st.checkbox("Cafe")
-st.checkbox("Mall")
-st.checkbox("Play")
-st.chat_input(placeholder="Enter your preferences for place")
+# Streamlit app configuration
+st.set_page_config(page_title="BatataBot", layout="wide")
+
+# Writing the app main function
+def main():
+    # Setting up the app title and description
+    st.title("BatataBot: Your Friendly Tour Guide")
+    st.write("Ask any question, and BatataBot will provide answers!")
+
+    # Available place types for the checklist
+    place_types = ['Historical Sites', 'Beaches', 'Mountains', 'Deserts', 'Cities']
+
+    # User selection for the type of place to visit
+    selected_types = st.multiselect("Select the type of place you want to visit", place_types)
+
+    # User input for ideal place or preferences
+    user_preferences = st.text_input("Enter your ideal place or preferences")
+
+    if st.button("Ask"):
+        # Generating response from BatataBot
+        response = batataBot(user_preferences)
+
+        # Displaying the response
+        st.write("BatataBot:", response)
+
+if __name__ == "__main__":
+    main()
+
+
 
 
 

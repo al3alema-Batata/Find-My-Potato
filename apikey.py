@@ -1,1 +1,1 @@
-apiKey="6UKve6jEMrkvR7TB0hUxL9t1UZQxJchCMzQuXJB5"
+apikey="6UKve6jEMrkvR7TB0hUxL9t1UZQxJchCMzQuXJB5"
