@@ -1,0 +1,27 @@
+-Message link
+1-Input: User preference of place message
+make it a proceess better approach options-then they enter a note
+-what technique a messaging sys example profissional tourist guide, give the AI a oersonality respons in friendly style
+-Bot link to googleMaps
+open account in >>>>
+use embeding scrape a few locations in Riyadh
+2-Bot search in reviews for preferences
+-Search for related words semantics
+-Summarize prefrences
++functions jsen response base on response, best place to find in google maps we need a formated message to search
+3-Bot show Message with best place that satisfies the preferences
+-Test by prompting? in playground
+
+Questions:
+1-Is the Algorithm correct?
+2-Check with Bot chat.
+3-How to connect google maps
+5-Prompting
+
+4-Advice for connecting frontend with backend
+ Streamlit host website there is a tutorial
+ using AI generating websites flask: really fast and uses python
+
+
+
+
